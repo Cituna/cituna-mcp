@@ -1,0 +1,55 @@
+{
+  "name": "cituna-mcp",
+  "version": "1.4.0",
+  "description": "MCP server for Cituna: daily AI-visibility tracking (per-engine citations, positions, and the answer receipts), audits, gaps, and live Google Search Console data, for Claude and other MCP clients.",
+  "keywords": [
+    "mcp",
+    "modelcontextprotocol",
+    "ai-visibility",
+    "aeo",
+    "geo",
+    "google-search-console",
+    "seo",
+    "cituna"
+  ],
+  "license": "MIT",
+  "author": "Cituna",
+  "homepage": "https://cituna.com/mcp",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cituna/cituna-mcp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/cituna/cituna-mcp/issues"
+  },
+  "type": "module",
+  "bin": {
+    "cituna-mcp": "dist/index.js"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "tsx src/index.ts",
+    "prepublishOnly": "npm run build"
+  },
+  "engines": {
+    "node": ">=18.17"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.29.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.7.0",
+    "tsx": "^4.19.1",
+    "typescript": "^5.6.2"
+  },
+  "main": "dist/index.js",
+  "publishConfig": {
+    "access": "public"
+  }
+}
