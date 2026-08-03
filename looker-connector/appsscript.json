@@ -1,0 +1,18 @@
+{
+  "timeZone": "America/New_York",
+  "dependencies": {},
+  "exceptionLogging": "STACKDRIVER",
+  "runtimeVersion": "V8",
+  "dataStudio": {
+    "name": "Cituna",
+    "logoUrl": "https://cituna.com/icon.png",
+    "company": "Cituna",
+    "companyUrl": "https://cituna.com",
+    "addonUrl": "https://github.com/rarora2026-gif/visibility-os-app/tree/main/looker-connector",
+    "supportUrl": "https://github.com/rarora2026-gif/visibility-os-app/issues",
+    "description": "AI-visibility reporting from Cituna: overall visibility score, per-engine citation rates (ChatGPT, Perplexity, Gemini, Claude, Grok, Google AI Overviews), SEO / GEO / authority scores, share of voice, and open-gap counts, per scan and domain.",
+    "sources": ["cituna"],
+    "authType": ["KEY"],
+    "feeType": ["FREE"]
+  }
+}
