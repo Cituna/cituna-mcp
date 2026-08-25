@@ -1,0 +1,36 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "com.cituna/cituna-mcp",
+  "description": "Track how 6 AI engines cite your brand, daily, with live Google Search Console.",
+  "repository": {
+    "url": "https://github.com/cituna/cituna-mcp",
+    "source": "github"
+  },
+  "version": "1.5.0",
+  "packages": [
+    {
+      "registryType": "npm",
+      "identifier": "cituna-mcp",
+      "version": "1.5.0",
+      "transport": {
+        "type": "stdio"
+      },
+      "environmentVariables": [
+        {
+          "description": "Personal API key from the Cituna app: Integrations, then \"Claude / MCP access\", then Generate token. Looks like cituna_sk_...",
+          "isRequired": true,
+          "format": "string",
+          "isSecret": true,
+          "name": "CITUNA_API_KEY"
+        },
+        {
+          "description": "Backend base URL. Defaults to https://cituna.com; set this only to point at a different backend.",
+          "isRequired": false,
+          "format": "string",
+          "isSecret": false,
+          "name": "CITUNA_API_URL"
+        }
+      ]
+    }
+  ]
+}
