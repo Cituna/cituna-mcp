@@ -1,0 +1,63 @@
+{
+  "name": "cituna-mcp",
+  "mcpName": "com.cituna/cituna-mcp",
+  "version": "1.7.0",
+  "description": "MCP server for Cituna: daily AI-visibility tracking (per-engine citations, positions, and the answer receipts), audits, gaps, and live Google Search Console data, for Claude and other MCP clients.",
+  "keywords": [
+    "mcp",
+    "modelcontextprotocol",
+    "ai-visibility",
+    "aeo",
+    "geo",
+    "google-search-console",
+    "seo",
+    "cituna"
+  ],
+  "license": "MIT",
+  "author": "Cituna",
+  "homepage": "https://cituna.com/mcp",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cituna/cituna-mcp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/cituna/cituna-mcp/issues"
+  },
+  "type": "module",
+  "bin": {
+    "cituna-mcp": "dist/index.js",
+    "cituna-mcp-http": "dist/http.js"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "start:http": "node dist/http.js",
+    "dev": "tsx src/index.ts",
+    "dev:http": "tsx src/http.ts",
+    "test": "tsx src/client.test.ts && tsx src/analysis.test.ts && tsx src/routes.test.ts && tsx src/outreach.test.ts && tsx src/sourcesSearch.test.ts && tsx src/version.test.ts",
+    "test:transports": "tsx src/transports.test.ts",
+    "test:annotations": "tsx src/annotations.test.ts",
+    "prepublishOnly": "npm run build",
+    "postversion": "cd .. && git add mcp/package.json mcp/package-lock.json && git commit -m \"release: cituna-mcp v$npm_package_version\" && git tag mcp-v$npm_package_version && echo \"tagged mcp-v$npm_package_version — now: git push --follow-tags\""
+  },
+  "engines": {
+    "node": ">=18.17"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.29.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.7.0",
+    "tsx": "^4.19.1",
+    "typescript": "^5.6.2"
+  },
+  "main": "dist/index.js",
+  "publishConfig": {
+    "access": "public"
+  }
+}

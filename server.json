@@ -1,0 +1,58 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "com.cituna/cituna-mcp",
+  "description": "Track how 7 AI engines cite your brand, daily, with live Google Search Console.",
+  "repository": {
+    "url": "https://github.com/cituna/cituna-mcp",
+    "source": "github"
+  },
+  "version": "1.7.0",
+  "packages": [
+    {
+      "registryType": "npm",
+      "identifier": "cituna-mcp",
+      "version": "1.7.0",
+      "transport": {
+        "type": "stdio"
+      },
+      "environmentVariables": [
+        {
+          "description": "Personal API key from the Cituna app: Integrations, then \"Claude / MCP access\", then Generate token. Looks like cituna_sk_...",
+          "isRequired": true,
+          "format": "string",
+          "isSecret": true,
+          "name": "CITUNA_API_KEY"
+        },
+        {
+          "description": "Backend base URL. Defaults to https://cituna.com; set this only to point at a different backend.",
+          "isRequired": false,
+          "format": "string",
+          "isSecret": false,
+          "name": "CITUNA_API_URL"
+        }
+      ]
+    }
+  ],
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://mcp.cituna.com/mcp",
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {apiKey}",
+          "description": "Connect with just your own personal API key — no full-workspace OAuth grant. The key authenticates as you and is revocable in the app. (You can also add this URL as an OAuth connector instead, which defaults to read-only and keeps Google Search Console a separate opt-in.)",
+          "isRequired": true,
+          "isSecret": true,
+          "variables": {
+            "apiKey": {
+              "description": "Your Cituna personal API key (cituna_sk_…). Create it in the app under Integrations → \"Claude / MCP access\" → Generate token. It is scoped to your workspace only and can be revoked at any time.",
+              "isRequired": true,
+              "isSecret": true
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
