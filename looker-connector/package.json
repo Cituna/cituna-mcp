@@ -1,0 +1,23 @@
+{
+  "name": "cituna-looker-connector",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Google Looker Studio community connector for Cituna: AI-visibility scores, per-engine citation rates, share of voice, SEO/GEO/authority, and open-gap counts.",
+  "license": "MIT",
+  "author": "Cituna",
+  "homepage": "https://cituna.com",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rarora2026-gif/visibility-os-app.git",
+    "directory": "looker-connector"
+  },
+  "scripts": {
+    "login": "clasp login",
+    "push": "clasp push",
+    "deploy": "clasp deploy",
+    "open": "clasp open"
+  },
+  "devDependencies": {
+    "@google/clasp": "^2.4.2"
+  }
+}
