@@ -1,0 +1,5 @@
+# clasp writes your real Apps Script id + local auth here. Never commit it.
+.clasp.json
+.clasprc.json
+node_modules/
+*.log
